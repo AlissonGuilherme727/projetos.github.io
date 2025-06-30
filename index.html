@@ -4,227 +4,508 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio de Alisson Guilherme</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+        :root {
+            --primary: #2c82c9;
+            --secondary: #35424a;
+            --accent: #779556;
+            --light: #f4f4f4;
+            --dark: #1a2930;
+        }
+        
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
             color: #333;
-            background-color: #f4f4f4;
+            background: linear-gradient(135deg, #f9f9f9, #eef2f5);
+            background-attachment: fixed;
         }
+        
         header {
-            background: linear-gradient(135deg, #35424a, #1a2930);
-            color: #ffffff;
-            padding: 40px 0;
+            background: linear-gradient(135deg, var(--secondary), var(--dark));
+            color: white;
+            padding: 50px 0;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        .container {
-            width: 85%;
-            max-width: 1200px;
-            margin: auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            position: relative;
             overflow: hidden;
         }
-        section {
-            padding: 30px 0;
-            border-bottom: 1px solid #e1e1e1;
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon points="0,0 100,0 100,100" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: cover;
         }
-        .project, .info-card {
-            background: #fff;
-            margin: 25px 0;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
         }
-        .project:hover, .info-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        
+        .intro-text {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: linear-gradient(135deg, #35424a, #1a2930);
-            color: #fff;
-            margin-top: 30px;
+        
+        .intro-text h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
-        a {
-            color: #2c82c9;
-            text-decoration: none;
+        
+        .intro-text p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 25px;
+        }
+        
+        .tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .tag {
+            background: rgba(255,255,255,0.15);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(5px);
             transition: all 0.3s ease;
         }
-        a:hover {
-            color: #1a6cb3;
-            text-decoration: underline;
-        }
-        .project-link {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 18px;
-            background: #2c82c9;
-            color: white;
-            border-radius: 6px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-        .project-link:hover {
-            background: #1a6cb3;
-            text-decoration: none;
+        
+        .tag:hover {
+            background: rgba(255,255,255,0.25);
             transform: translateY(-3px);
-            box-shadow: 0 4px 10px rgba(28, 130, 201, 0.3);
         }
+        
+        section {
+            padding: 70px 0;
+        }
+        
         h2 {
-            color: #35424a;
-            border-bottom: 3px solid #2c82c9;
-            padding-bottom: 12px;
-            margin-bottom: 20px;
-            font-size: 2rem;
+            color: var(--secondary);
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 15px;
+            text-align: center;
         }
+        
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .info-card {
+            background: white;
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+        
+        .info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+        
         .hobbies-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
             gap: 20px;
-            margin-top: 20px;
+            margin-top: 25px;
         }
+        
         .hobby-item, .game-item {
             background: #f8f9fa;
-            padding: 18px;
-            border-radius: 8px;
-            border-left: 5px solid #2c82c9;
-            transition: transform 0.3s ease;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
         }
+        
         .hobby-item:hover, .game-item:hover {
-            transform: translateY(-5px);
+            transform: translateY(-7px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            border-color: var(--primary);
         }
-        .highlight {
-            background-color: #fffde7;
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-weight: bold;
+        
+        .hobby-item i {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
         }
+        
         .chess-card {
             background: linear-gradient(to right, #f5f5f5, #e9ecef);
-            padding: 25px;
-            border-radius: 10px;
-            margin: 20px 0;
-            border-left: 5px solid #2c82c9;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
             display: flex;
             align-items: center;
-            gap: 25px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            gap: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+            border: 1px solid rgba(0,0,0,0.03);
         }
+        
         .chess-icon {
-            font-size: 3em;
+            font-size: 3.5rem;
             flex-shrink: 0;
-            color: #2c82c9;
+            color: var(--accent);
         }
+        
         .rating-badge {
-            background: linear-gradient(to right, #2c82c9, #1a6cb3);
+            background: linear-gradient(to right, var(--primary), #1a6cb3);
             color: white;
-            padding: 5px 15px;
+            padding: 5px 16px;
             border-radius: 20px;
             font-weight: bold;
             display: inline-block;
             margin-right: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 3px 8px rgba(44, 130, 201, 0.3);
         }
+        
         .chess-profile-link {
-            color: #2c82c9;
+            color: var(--primary);
             font-weight: bold;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            position: relative;
-        }
-        .chess-profile-link:hover {
-            text-decoration: underline;
-        }
-        .link-icon {
-            margin-left: 5px;
-            font-size: 0.9em;
-        }
-        .chess-profile-button {
-            margin-top: 20px;
-            background: linear-gradient(to right, #779556, #5a7d34);
-        }
-        .chess-profile-button:hover {
-            background: linear-gradient(to right, #5a7d34, #476027);
-            box-shadow: 0 4px 10px rgba(90, 125, 52, 0.3);
+            transition: all 0.3s ease;
         }
         
-        /* Nova seção de jogos preferidos */
+        .chess-profile-link:hover {
+            color: #155a8a;
+            text-decoration: underline;
+        }
+        
+        .link-icon {
+            margin-left: 6px;
+            font-size: 0.9em;
+        }
+        
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: var(--primary);
+            color: white;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            gap: 8px;
+        }
+        
+        .project-link:hover {
+            background: #1a6cb3;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(44, 130, 201, 0.3);
+        }
+        
+        .chess-profile-button {
+            background: linear-gradient(to right, var(--accent), #5a7d34);
+        }
+        
+        .chess-profile-button:hover {
+            background: linear-gradient(to right, #5a7d34, #476027);
+        }
+        
+        /* Seção de Jogos Preferidos */
         .games-section {
-            margin: 40px 0;
+            margin: 60px 0;
         }
-        .games-header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
+        
         .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+        }
+        
+        .game-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .game-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+        }
+        
+        .game-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-bottom: 4px solid var(--primary);
+        }
+        
+        .game-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .game-title {
+            font-size: 1.7rem;
+            margin: 0 0 15px 0;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .game-icon {
+            color: var(--primary);
+            font-size: 1.4rem;
+        }
+        
+        .game-description {
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            flex-grow: 1;
+            font-style: italic;
+        }
+        
+        .inspiration {
+            background: #f8f9ff;
+            padding: 18px;
+            border-radius: 10px;
+            margin-top: 15px;
+            border-left: 3px solid var(--primary);
+        }
+        
+        .inspiration strong {
+            color: var(--secondary);
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .game-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            background: var(--primary);
+            color: white;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            gap: 8px;
+            margin-top: 20px;
+            width: fit-content;
+        }
+        
+        .game-link:hover {
+            background: #1a6cb3;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(44, 130, 201, 0.3);
+        }
+        
+        /* Seção de Projetos */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .project {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+        
+        .project h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .project-icon {
+            color: var(--primary);
+        }
+        
+        .tech-badge {
+            display: inline-block;
+            background: #e3f2fd;
+            color: var(--primary);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        
+        .highlight {
+            background: #fff8e1;
+            padding: 12px 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+            font-weight: bold;
+            color: #5d4037;
+            border-left: 4px solid #ffc107;
+        }
+        
+        /* Seção de Contato */
+        .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
-        .game-card {
+        
+        .contact-card {
             background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-            transition: all 0.4s ease;
-        }
-        .game-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-        }
-        .game-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-bottom: 4px solid #2c82c9;
-        }
-        .game-content {
-            padding: 20px;
-        }
-        .game-title {
-            font-size: 1.5rem;
-            margin-top: 0;
-            color: #35424a;
-            border-bottom: 2px solid #f0f0f0;
-            padding-bottom: 10px;
-        }
-        .game-description {
-            color: #555;
-            margin-bottom: 15px;
-        }
-        .game-link {
-            display: inline-block;
-            padding: 8px 16px;
-            background: #2c82c9;
-            color: white;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 0.9rem;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            text-align: center;
             transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.03);
         }
-        .game-link:hover {
-            background: #1a6cb3;
-            text-decoration: none;
-            transform: translateY(-2px);
+        
+        .contact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+        
+        .contact-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .contact-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        .contact-link {
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        
+        .contact-link:hover {
+            color: #155a8a;
+            transform: translateX(5px);
+        }
+        
+        footer {
+            background: linear-gradient(135deg, var(--secondary), var(--dark));
+            color: white;
+            padding: 50px 0 30px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .footer-content p {
+            opacity: 0.8;
+            margin: 10px 0;
+        }
+        
+        .heart {
+            color: #ff6b6b;
+            animation: heartbeat 1.2s infinite;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            5% { transform: scale(1.2); }
+            10% { transform: scale(1); }
+            15% { transform: scale(1.3); }
+            50% { transform: scale(1); }
+            100% { transform: scale(1); }
         }
         
         /* Responsividade */
-        @media (max-width: 768px) {
-            .container {
-                width: 90%;
-            }
+        @media (max-width: 992px) {
             .chess-card {
                 flex-direction: column;
                 text-align: center;
-                gap: 15px;
+                gap: 20px;
             }
-            .games-grid {
-                grid-template-columns: 1fr;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+            
+            .intro-text h1 {
+                font-size: 2.2rem;
+            }
+            
+            .intro-text p {
+                font-size: 1.1rem;
+            }
+            
+            section {
+                padding: 50px 0;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -232,8 +513,15 @@
 <body>
     <header>
         <div class="container">
-            <h1>Alisson Guilherme Ferreira Silva Soares</h1>
-            <p>Estudante de Ciências da Computação | Desenvolvedor de Jogos | Enxadrista</p>
+            <div class="intro-text">
+                <h1>Alisson Guilherme Ferreira Silva Soares</h1>
+                <p>Estudante de Ciências da Computação | Desenvolvedor de Jogos | Enxadrista</p>
+                <div class="tags">
+                    <div class="tag">Programador C++</div>
+                    <div class="tag">Desenvolvedor de Jogos</div>
+                    <div class="tag">Professor de Xadrez</div>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -249,22 +537,34 @@
                     <li><strong>Naturalidade:</strong> São Paulo - Capital</li>
                     <li><strong>Hobbies:</strong> 
                         <div class="hobbies-grid">
-                            <div class="hobby-item">Praticar esportes</div>
-                            <div class="hobby-item">Jogar xadrez</div>
-                            <div class="hobby-item">Desenvolver jogos</div>
-                            <div class="hobby-item">Explorar novas tecnologias</div>
+                            <div class="hobby-item">
+                                <i class="fas fa-running"></i>
+                                <div>Praticar esportes</div>
+                            </div>
+                            <div class="hobby-item">
+                                <i class="fas fa-chess"></i>
+                                <div>Jogar xadrez</div>
+                            </div>
+                            <div class="hobby-item">
+                                <i class="fas fa-gamepad"></i>
+                                <div>Desenvolver jogos</div>
+                            </div>
+                            <div class="hobby-item">
+                                <i class="fas fa-laptop-code"></i>
+                                <div>Explorar tecnologias</div>
+                            </div>
                         </div>
                     </li>
                 </ul>
                 
                 <h3>Minha Jornada no Xadrez</h3>
                 <div class="chess-card">
-                    <div class="chess-icon">♟️</div>
+                    <div class="chess-icon"><i class="fas fa-chess-knight"></i></div>
                     <div>
                         <p><strong>Rating atual:</strong> <span class="rating-badge">1000+</span> no 
                             <a href="https://www.chess.com/member/titanzero000" target="_blank" class="chess-profile-link">
                                 Chess.com
-                                <span class="link-icon">↗</span>
+                                <span class="link-icon"><i class="fas fa-external-link-alt"></i></span>
                             </a> / Lichess
                         </p>
                         <p><strong>Experiência docente:</strong> Professor temporário de xadrez na Universidade Federal de Alfenas (UNIFAL)</p>
@@ -273,32 +573,35 @@
                         <p>Minha paixão pelo xadrez me levou a compartilhar conhecimento como professor e a desenvolver um protótipo de jogo de xadrez digital.</p>
                         
                         <a href="https://www.chess.com/member/titanzero000" target="_blank" class="project-link chess-profile-button">
-                            Visitar meu perfil no Chess.com
+                            <i class="fab fa-chess"></i> Visitar meu perfil no Chess.com
                         </a>
                     </div>
                 </div>
 
                 <h3>Inspirações</h3>
-                <p>💡 Minha paixão por jogos como Undertale, Hollow Knight e Deltarune me inspirou a começar a desenvolver meus próprios projetos de programação, incluindo o jogo de labirinto no VSCode.</p>
+                <p><i class="fas fa-lightbulb" style="color: #FFC107;"></i> Minha paixão por jogos como Undertale, Hollow Knight e Deltarune me inspirou a começar a desenvolver meus próprios projetos de programação, incluindo o jogo de labirinto no VSCode.</p>
             </div>
         </section>
 
-        <!-- Nova seção de jogos preferidos -->
+        <!-- Seção de Jogos Preferidos -->
         <section class="games-section">
-            <div class="games-header">
-                <h2>Meus Jogos Preferidos</h2>
-                <p>Os jogos que moldaram minha paixão por desenvolvimento de jogos</p>
-            </div>
+            <h2>Meus Jogos Preferidos</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; color: #555;">Os jogos que moldaram minha visão sobre design de jogos e narrativa interativa</p>
             
             <div class="games-grid">
                 <!-- Undertale -->
                 <div class="game-card">
                     <img src="https://cdn.akamai.steamstatic.com/steam/apps/391540/header.jpg" alt="Undertale" class="game-image">
                     <div class="game-content">
-                        <h3 class="game-title">Undertale</h3>
-                        <p class="game-description">Um RPG único onde ninguém precisa morrer. O jogo que revolucionou a narrativa em games com suas escolhas morais e personagens memoráveis.</p>
-                        <p><strong>O que me inspira:</strong> Narrativa inovadora, trilha sonora icônica e mecânicas que desafiam convenções.</p>
-                        <a href="https://undertale.com/" target="_blank" class="game-link">Site Oficial</a>
+                        <h3 class="game-title"><i class="fas fa-heart game-icon"></i> Undertale</h3>
+                        <p class="game-description">"Adoro a narrativa do jogo cujas decisões realmente impactam a história de modo a fazer-me questionar sobre minhas ações. Cada escolha tem peso e consequências que ressoam por todo o jogo."</p>
+                        <div class="inspiration">
+                            <strong>Por que me inspira:</strong>
+                            <p>Revolucionou minha compreensão de como escolhas do jogador podem criar narrativas profundas e emocionantes que desafiam conceitos morais.</p>
+                        </div>
+                        <a href="https://undertale.com/" target="_blank" class="game-link">
+                            <i class="fas fa-globe"></i> Site Oficial
+                        </a>
                     </div>
                 </div>
                 
@@ -306,10 +609,15 @@
                 <div class="game-card">
                     <img src="https://cdn.akamai.steamstatic.com/steam/apps/367520/header.jpg" alt="Hollow Knight" class="game-image">
                     <div class="game-content">
-                        <h3 class="game-title">Hollow Knight</h3>
-                        <p class="game-description">Ação-aventura em um vasto mundo interconectado repleto de segredos. Explore cavernas antigas, lute contra criaturas e desvende mistérios.</p>
-                        <p><strong>O que me inspira:</strong> Design de mundo impressionante, atmosfera imersiva e combate desafiador.</p>
-                        <a href="https://www.hollowknight.com/" target="_blank" class="game-link">Site Oficial</a>
+                        <h3 class="game-title"><i class="fas fa-crown game-icon"></i> Hollow Knight</h3>
+                        <p class="game-description">"Uma ambientação maravilhosa, digna do melhor metroidvania já criado. Uma inspiração artística para mim e para todas as pessoas que já sonharam em criar um jogo com mundo rico e atmosfera cativante."</p>
+                        <div class="inspiration">
+                            <strong>Por que me inspira:</strong>
+                            <p>Mostra como arte, design de mundo e jogabilidade podem se unir para criar uma experiência imersiva que define um gênero.</p>
+                        </div>
+                        <a href="https://www.hollowknight.com/" target="_blank" class="game-link">
+                            <i class="fas fa-globe"></i> Site Oficial
+                        </a>
                     </div>
                 </div>
                 
@@ -317,10 +625,15 @@
                 <div class="game-card">
                     <img src="https://deltarune.com/assets/images/header.png" alt="Deltarune" class="game-image">
                     <div class="game-content">
-                        <h3 class="game-title">Deltarune</h3>
-                        <p class="game-description">O sucessor espiritual de Undertale. Uma aventura onde suas escolhas podem não importar tanto quanto você pensa.</p>
-                        <p><strong>O que me inspira:</strong> Evolução das mecânicas de combate, personagens carismáticos e humor único.</p>
-                        <a href="https://deltarune.com/" target="_blank" class="game-link">Site Oficial</a>
+                        <h3 class="game-title"><i class="fas fa-music game-icon"></i> Deltarune</h3>
+                        <p class="game-description">"Semelhante ao Undertale porém a sensação de peso das minhas ações foram aumentadas e muito em relação ao primeiro jogo. Uma jogabilidade incrível além de trilhas sonoras maravilhosas, simplesmente perfeito no que promete."</p>
+                        <div class="inspiration">
+                            <strong>Por que me inspira:</strong>
+                            <p>Demonstra como evoluir mecânicas de jogabilidade enquanto mantém a essência narrativa, com uma trilha sonora que eleva a experiência.</p>
+                        </div>
+                        <a href="https://deltarune.com/" target="_blank" class="game-link">
+                            <i class="fas fa-globe"></i> Site Oficial
+                        </a>
                     </div>
                 </div>
             </div>
@@ -329,43 +642,80 @@
         <section id="projetos">
             <h2>Meus Projetos</h2>
             
-            <div class="project">
-                <h3>Jogo de Labirinto no VSCode</h3>
-                <p>Um jogo de labirinto desenvolvido inteiramente no VSCode, feito para rodar diretamente no editor. O projeto demonstra minha habilidade em criar aplicações interativas usando C++.</p>
-                <p><strong>Tecnologias usadas:</strong> C++</p>
-                <a href="https://github.com/AlissonGuilherme727/projetos.github.io/blob/main/OCTmaze.cpp" class="project-link">Ver código no GitHub</a>
-            </div>
-            
-            <div class="project">
-                <h3>Protótipo de Jogo de Xadrez</h3>
-                <p>Um protótipo de jogo de xadrez que estou desenvolvendo, combinando minha paixão pelo esporte com minhas habilidades de programação. O projeto inclui:</p>
-                <ul>
-                    <li>Tabuleiro interativo</li>
-                    <li>Regras completas do xadrez</li>
-                    <li>Sistema de registro de partidas</li>
-                    <li>Inteligência artificial básica</li>
-                </ul>
-                <p><strong>Tecnologias usadas:</strong> C++</p>
-                <p class="highlight">Em breve disponível no GitHub!</p>
+            <div class="projects-grid">
+                <div class="project">
+                    <h3><i class="fas fa-labyrinth project-icon"></i> Jogo de Labirinto no VSCode</h3>
+                    <p>Um jogo de labirinto desenvolvido inteiramente no VSCode, feito para rodar diretamente no editor. O projeto demonstra minha habilidade em criar aplicações interativas usando C++.</p>
+                    <div class="tech-badge">C++</div>
+                    <a href="https://github.com/AlissonGuilherme727/projetos.github.io/blob/main/OCTmaze.cpp" class="project-link">
+                        <i class="fab fa-github"></i> Ver código no GitHub
+                    </a>
+                </div>
+                
+                <div class="project">
+                    <h3><i class="fas fa-chess-board project-icon"></i> Protótipo de Jogo de Xadrez</h3>
+                    <p>Um protótipo de jogo de xadrez que estou desenvolvendo, combinando minha paixão pelo esporte com minhas habilidades de programação.</p>
+                    <div class="tech-badge">C++</div>
+                    <p><strong>Recursos implementados:</strong></p>
+                    <ul>
+                        <li>Tabuleiro interativo com movimentação</li>
+                        <li>Regras completas do xadrez</li>
+                        <li>Sistema de registro de partidas</li>
+                        <li>Inteligência artificial básica</li>
+                    </ul>
+                    <div class="highlight">
+                        <i class="fas fa-hourglass-half"></i> Em breve disponível no GitHub!
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="contato">
             <h2>Contato</h2>
-            <div class="info-card">
-                <p>📧 Você pode entrar em contato comigo através do GitHub ou visitar meus projetos online:</p>
-                <ul>
-                    <li>GitHub: <a href="https://github.com/AlissonGuilherme727">github.com/AlissonGuilherme727</a></li>
-                    <li>Portfólio Online: <a href="https://alissonguilherme727.github.io">alissonguilherme727.github.io</a></li>
-                </ul>
-                <p>Estou sempre aberto a novas oportunidades de aprendizado e colaboração!</p>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h3>GitHub</h3>
+                    <p>Acesse meus projetos e códigos-fonte</p>
+                    <a href="https://github.com/AlissonGuilherme727" target="_blank" class="contact-link">
+                        github.com/AlissonGuilherme727 <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Portfólio Online</h3>
+                    <p>Visite meu site pessoal</p>
+                    <a href="https://alissonguilherme727.github.io" target="_blank" class="contact-link">
+                        alissonguilherme727.github.io <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-chess"></i>
+                    </div>
+                    <h3>Chess.com</h3>
+                    <p>Jogue uma partida comigo</p>
+                    <a href="https://www.chess.com/member/titanzero000" target="_blank" class="contact-link">
+                        Perfil no Chess.com <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
             </div>
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2025 Alisson Guilherme - Todos os direitos reservados</p>
-        <p>Desenvolvido com ♥ por Alisson Guilherme</p>
+        <div class="footer-content">
+            <p>&copy; 2025 Alisson Guilherme - Todos os direitos reservados</p>
+            <p>Desenvolvido com <span class="heart"><i class="fas fa-heart"></i></span> por Alisson Guilherme</p>
+            <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.7;">"A jornada de mil milhas começa com um único passo" - Lao Tzu</p>
+        </div>
     </footer>
 </body>
 </html>
