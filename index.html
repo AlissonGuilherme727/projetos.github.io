@@ -87,6 +87,29 @@
             border-radius: 3px;
             font-weight: bold;
         }
+        .chess-card {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #2c82c9;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .chess-icon {
+            font-size: 2.5em;
+            flex-shrink: 0;
+        }
+        .rating-badge {
+            background: #2c82c9;
+            color: white;
+            padding: 3px 12px;
+            border-radius: 15px;
+            font-weight: bold;
+            display: inline-block;
+            margin-right: 8px;
+        }
     </style>
 </head>
 <body>
@@ -124,9 +147,19 @@
                     </li>
                 </ul>
                 
-                <h3>Curiosidades:</h3>
-                <p>🎯 <span class="highlight">Campeão de xadrez</span> em dois torneios importantes - um aos 6 e outro aos 8 anos, mantendo um impressionante recorde de <span class="highlight">7 vitórias e apenas 1 derrota</span> em ambos os campeonatos!</p>
-                <p>💡 Minha paixão por jogos como Undertale e Hollow Knight me inspirou a começar a desenvolver meus próprios projetos de programação.</p>
+                <h3>Minha Jornada no Xadrez</h3>
+                <div class="chess-card">
+                    <div class="chess-icon">♟️</div>
+                    <div>
+                        <p><strong>Rating atual:</strong> <span class="rating-badge">1000+</span> no Chess.com/Lichess</p>
+                        <p><strong>Títulos:</strong> Campeão em dois torneios (aos 6 e 8 anos)</p>
+                        <p><strong>Recorde impressionante:</strong> 7 vitórias e apenas 1 derrota em ambos campeonatos</p>
+                        <p>Minha paixão pelo xadrez me levou a desenvolver um protótipo de jogo de xadrez, combinando estratégia e programação.</p>
+                    </div>
+                </div>
+
+                <h3>Inspirações</h3>
+                <p>💡 Minha paixão por jogos como Undertale e Hollow Knight me inspirou a começar a desenvolver meus próprios projetos de programação, incluindo o jogo de labirinto no VSCode.</p>
             </div>
         </section>
 
@@ -159,6 +192,7 @@
                 <p>📧 Você pode entrar em contato comigo através do GitHub ou visitar meus projetos online:</p>
                 <ul>
                     <li>GitHub: <a href="https://github.com/AlissonGuilherme727">github.com/AlissonGuilherme727</a></li>
+                    <li>Portfólio Online: <a href="https://alissonguilherme727.github.io">alissonguilherme727.github.io</a></li>
                 </ul>
                 <p>Estou sempre aberto a novas oportunidades de aprendizado e colaboração!</p>
             </div>
@@ -167,7 +201,7 @@
 
     <footer>
         <p>&copy; 2025 Alisson Guilherme - Todos os direitos reservados</p>
-        <p>Desenvolvido por Alisson Guilherme</p>
+        <p>Desenvolvido com ♥ por Alisson Guilherme</p>
     </footer>
 </body>
 </html>
